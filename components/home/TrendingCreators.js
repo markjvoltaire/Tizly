@@ -1,23 +1,35 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 
-export default function TrendingCreators() {
+export default function TrendingCreators({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.creatorImage}
-        source={require("../../assets/desi.png")}
-      />
+      <Text style={styles.trendTitle}>Trending Creator 🔥</Text>
+      <View style={styles.iconContainer}>
+        <TouchableOpacity>
+          <Image
+            style={styles.userIcon}
+            source={require("../../assets/druski.jpg")}
+          />
+          <Text style={styles.userName1}>Druski</Text>
+        </TouchableOpacity>
 
-      <Image
-        style={styles.creatorImage}
-        source={require("../../assets/iaa.png")}
-      />
+        <TouchableOpacity>
+          <Image
+            style={styles.userIcon}
+            source={require("../../assets/wallo.jpg")}
+          />
+          <Text style={styles.userName2}>Millon Dollar Worth of Game </Text>
+        </TouchableOpacity>
 
-      <Image
-        style={styles.creatorImage}
-        source={require("../../assets/complex.png")}
-      />
+        <TouchableOpacity>
+          <Image
+            style={styles.userIcon}
+            source={require("../../assets/taylor.jpg")}
+          />
+          <Text style={styles.userName3}>DJ Taylor</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -25,17 +37,54 @@ export default function TrendingCreators() {
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
+    justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginHorizontal: -100,
+    marginLeft: -150,
+    left: 164,
+    top: 12,
   },
-  creatorRow: {
-    position: "absolute",
+
+  iconContainer: {
     flexDirection: "row",
   },
 
-  creatorImage: {
-    justifyContent: "space-between",
+  userIcon: {
+    marginLeft: 10,
+    resizeMode: "contain",
+    marginHorizontal: 2,
+    top: 50,
+    width: 127,
+    height: 123,
+    right: 20,
+  },
+
+  trendTitle: {
+    position: "absolute",
+    top: 3,
+    fontWeight: "bold",
+  },
+
+  userName1: {
+    position: "absolute",
+    top: 189,
+    left: 25,
+    fontWeight: "bold",
+    color: "#5C5C5C",
+  },
+  userName2: {
+    position: "absolute",
+    top: 185,
+    left: 6,
+    width: 110,
+    fontWeight: "bold",
+    color: "#5C5C5C",
+  },
+  userName3: {
+    position: "absolute",
+    top: 189,
+    left: 15,
+    fontWeight: "bold",
+    color: "#5C5C5C",
   },
 });
